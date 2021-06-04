@@ -24,9 +24,8 @@ public class PointController {
         Point point = pointDto.toPoint();
         point.setUser(userService.findByLogin(login));
         pointService.save(point);
-//        User user = userService.findByLogin(login);
-//        user.setPoints(point);
-//        pointService.save(point);
+        pointService.countPoints(point);
+        pointService.countPercentage(point);
         System.out.println("Point " + point + " added!");
         return pointDto;
     }
@@ -36,7 +35,6 @@ public class PointController {
     Collection<PointDto> getPoints(@RequestHeader String login){
         System.out.println("Request for points of user " + login);
         Collection<Point> collection = pointService.findByUser(userService.findByLogin(login));
-//        Collection<Point> collection = userService.findByLogin(login).getPoints();
         Collection<PointDto> newCol = new ArrayList<>();
         for (Point p:collection){
             newCol.add(p.toPointDto());

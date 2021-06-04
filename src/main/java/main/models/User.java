@@ -10,9 +10,6 @@ public class User {
     private String login;
     private String password;
 
-//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    private Collection<Point> points;
-
     public User() {
     }
 
@@ -32,14 +29,6 @@ public class User {
         this.password = password;
     }
 
-//    public Collection<Point> getPoints() {
-//        return points;
-//    }
-//
-//    public void setPoints(Point point) {
-//        this.points.add(point);
-//    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,7 +46,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "login='" + login + '\'' +
-//                ", points=" + points +
                 '}';
     }
 }

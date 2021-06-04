@@ -50,4 +50,14 @@ public class PointDto {
     public Point toPoint() {
         return new Point(this.x, this.y, this.r, this.hit);
     }
+
+    @Override
+    public String toString() {
+        return "PointDto{" +
+                "x=" + x +
+                ", y=" + y +
+                ", r=" + r +
+                ", hit=" + hit +
+                '}';
+    }
 }
